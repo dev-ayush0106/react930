@@ -1,0 +1,17 @@
+jsx: javascript extensible 
+: which helps us to write js & html together
+
+functional components
+syntax
+function App(){
+
+    return(
+        html 
+    )
+}
+export default App;
+
+components : we can reuse that component as many time as we want
+
+How we can use js varaible in react?
+we will use {variableName}
