@@ -1,0 +1,17 @@
+multiple exports from the component
+How default export is diffrent from others?
+
+This will be only on export default.
+
+Props : It is data which is passed with an component.
+
+
+Hooks: A feature that is adde in a application.
+1. useState(); This means which handle our state on every render
+syntax:
+let [currentstate,desiredState]=useState(currentvalue)
+after updating to desiredState it will transfer it's value to currentstate.
+
+eventhandles : onclick 
+
+Conditional Formatting: (condition)?statement if true: statement if false
