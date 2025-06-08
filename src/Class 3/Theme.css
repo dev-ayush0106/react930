@@ -1,0 +1,19 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.main{
+    padding: 5px 40px;
+}
+
+/* .dark{
+    color:white;
+    background-color: black;
+}
+
+.light{
+    color:black;
+    background-color: white;
+} */

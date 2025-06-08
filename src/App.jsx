@@ -1,31 +1,85 @@
+import { createBrowserRouter, RouterProvider } from "react-router";
 import First from "./Class 1/First";
 import Second from "./Class 1/Second";
 import Card from "./Class 2/Card";
 import New from "./Class 2/New";
-import SecondC,{ Hello, NewComponent }  from "./Class 2/SecondC";
+import SecondC, { Hello, NewComponent } from "./Class 2/SecondC";
 import ThemeUpdate from "./Class 2/ThemeUpdate";
+import InputChange from "./Class 3/InputChange";
+import ThemeChanger from "./Class 3/ThemeChanger";
+import Home from "./Class 3/router/Home";
+import About from "./Class 3/router/About";
+import Course from "./Class 3/router/Course";
+import Contact from "./Class 3/router/Contact";
+import PageNotFound from "./Class 3/router/PageNotFound";
+import Mern from "./Class 3/router/child/Mern";
+import JavaFS from "./Class 3/router/child/JavaFS";
+import PythonFS from "./Class 3/router/child/PythonFS";
 
-function App(){
-  return(
+function App() {
+  let router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />
+    }, // home
+    {
+      path: "/about",
+      element: <About />
+    }, // about
+    {
+      path: "/courses",
+      element: <Course />,
+      children:[
+        {
+          path:"mern",
+          element:<Mern/>
+        },
+        {
+          path:"javafs",
+          element:<JavaFS/>
+        },
+        {
+          path:"pythonfs",
+          element:<PythonFS/>
+        }
+      ]
+    }, // course
+    {
+      path: "/contact",
+      element: <Contact />
+    }, // contact
+    {
+      path: "*",
+      element:<PageNotFound/>
+    }
+  ])
+  return (
     <>
-    {/* First Class */}
-    {/* <First/>
+      {/* First Class */}
+      {/* <First/>
     <Second/> */}
 
-    {/* Second Class */}
-    {/* <SecondC/>
+      {/* Second Class */}
+      {/* <SecondC/>
     <NewComponent/>
     <Hello/> */}
 
-    {/* <Card id="1" name="Gulshan" course="Mern" city="Gurgaon"/>
+      {/* <Card id="1" name="Gulshan" course="Mern" city="Gurgaon"/>
     <Card id="2" name="Heena" course="Python FS" city="Gurgaon"/>
     <Card id="3" name="Rakes" course="MERN" city="Gurgaon"/>
     <Card id="4" name="Pradeep" course="MERN" city="Gurgaon"/> */}
 
-    {/* <New/> */}
+      {/* <New/> */}
 
-    <ThemeUpdate/>
+      {/* <ThemeUpdate/> */}
 
+
+      {/* Class 3 */}
+
+      {/* <ThemeChanger/> */}
+      {/* <InputChange/> */}
+
+      <RouterProvider router={router} />
     </>
   )
 }
