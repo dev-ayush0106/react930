@@ -15,20 +15,33 @@ import PageNotFound from "./Class 3/router/PageNotFound";
 import Mern from "./Class 3/router/child/Mern";
 import JavaFS from "./Class 3/router/child/JavaFS";
 import PythonFS from "./Class 3/router/child/PythonFS";
+import Navbar from "./Class 3/router/Navbar";
+import Student from "./Class 3/router/Student";
+import Date from "./Class 3/Calender";
+import Calender from "./Class 3/Calender";
 
 function App() {
   let router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />
+      element:<> 
+      <Navbar/>
+      <Home />
+      </>
     }, // home
     {
       path: "/about",
-      element: <About />
+      element: <>
+      <Navbar/>
+      <About />
+      </>
     }, // about
     {
       path: "/courses",
-      element: <Course />,
+      element: <>
+      <Navbar/>
+      <Course />
+      </>,
       children:[
         {
           path:"mern",
@@ -46,8 +59,18 @@ function App() {
     }, // course
     {
       path: "/contact",
-      element: <Contact />
+      element: <>
+      <Navbar/>
+      <Contact />
+      </>
     }, // contact
+    {
+      path: "/student/:id",
+      element: <>
+      <Navbar/>
+      <Student />
+      </>
+    },
     {
       path: "*",
       element:<PageNotFound/>
@@ -79,7 +102,8 @@ function App() {
       {/* <ThemeChanger/> */}
       {/* <InputChange/> */}
 
-      <RouterProvider router={router} />
+      {/* <RouterProvider router={router} /> */}
+      <Calender/>
     </>
   )
 }
