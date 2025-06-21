@@ -17,8 +17,10 @@ import JavaFS from "./Class 3/router/child/JavaFS";
 import PythonFS from "./Class 3/router/child/PythonFS";
 import Navbar from "./Class 3/router/Navbar";
 import Student from "./Class 3/router/Student";
+import Form from "./Class 4/Form/Form";
 import Date from "./Class 3/Calender";
 import Calender from "./Class 3/Calender";
+import UseEffect from "./Class 4/UseEffectHook/UseEffect";
 
 function App() {
   let router = createBrowserRouter([
@@ -103,7 +105,10 @@ function App() {
       {/* <InputChange/> */}
 
       {/* <RouterProvider router={router} /> */}
-      <Calender/>
+      {/* <Calender/> */}
+
+      {/* <Form/> */}
+      <UseEffect/>
     </>
   )
 }

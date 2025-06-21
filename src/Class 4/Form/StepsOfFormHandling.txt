@@ -1,0 +1,2 @@
+npm i react-hook-form
+register : data store
