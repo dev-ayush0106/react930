@@ -1,0 +1,20 @@
+fetch & axios 
+
+Diffrence b/w Fetch & axios
+
+fetch : res laata h , non-readable format --> .json() 
+        it is pre-installed
+        method:post
+
+axios : we can directly acces the data.
+        we have to install this
+        axios.post
+
+useEffect
+
+DashBoard
+
+useReducer : It is a State Managment Tool Where we manage mutliple state in a single format
+
+syntax
+let [state,dispatch]=useReducer(reducer,intialState);

@@ -21,6 +21,9 @@ import Form from "./Class 4/Form/Form";
 import Date from "./Class 3/Calender";
 import Calender from "./Class 3/Calender";
 import UseEffect from "./Class 4/UseEffectHook/UseEffect";
+import FetchAxios from "./Class 5/FetchAxios";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import UseReducer1 from "./Class 5/UseReducer1";
 
 function App() {
   let router = createBrowserRouter([
@@ -107,8 +110,13 @@ function App() {
       {/* <RouterProvider router={router} /> */}
       {/* <Calender/> */}
 
+      {/* Class 4 */}
       {/* <Form/> */}
-      <UseEffect/>
+      {/* <UseEffect/> */}
+
+      {/* Class 5 */}
+      {/* <FetchAxios/> */}
+      <UseReducer1/>
     </>
   )
 }
