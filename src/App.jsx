@@ -26,6 +26,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import UseReducer1 from "./Class 5/UseReducer1";
 import Todo from "./Class 6/Todo";
 import './App.css'
+import Tracker from "./Class 7/Tracker";
 
 function App() {
   let router = createBrowserRouter([
@@ -121,7 +122,10 @@ function App() {
       {/* <UseReducer1/> */}
 
       {/* Class 6 */}
-      <Todo/>
+      {/* <Todo/> */}
+
+      {/* Class 7 */}
+      <Tracker/>
     </>
   )
 }
