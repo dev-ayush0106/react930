@@ -22,11 +22,12 @@ import Date from "./Class 3/Calender";
 import Calender from "./Class 3/Calender";
 import UseEffect from "./Class 4/UseEffectHook/UseEffect";
 import FetchAxios from "./Class 5/FetchAxios";
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import UseReducer1 from "./Class 5/UseReducer1";
 import Todo from "./Class 6/Todo";
 import './App.css'
 import Tracker from "./Class 7/Tracker";
+import AboutPagination from "./Class 8/AboutPagination";
 
 function App() {
   let router = createBrowserRouter([
@@ -125,9 +126,12 @@ function App() {
       {/* <Todo/> */}
 
       {/* Class 7 */}
-      <Tracker/>
+      {/* <Tracker/> */}
+
+      {/* Class 8 */}
+      <AboutPagination/>
     </>
-  )
+  ) 
 }
 
 export default App;

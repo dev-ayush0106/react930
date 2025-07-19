@@ -1,0 +1,58 @@
+import React, { useEffect, useState } from 'react'
+import ProductComponent from './ProductComponent';
+import "./pagei.css"
+
+const AboutPagination = () => {
+    let [products, setProducts] = useState([]);
+    let [currentPage,setCurrentPage]=useState(0);
+
+    let fetchData = async () => {
+        let res = await fetch("https://dummyjson.com/products?limit=500");
+        let data = await res.json();
+        setProducts(data.products)
+    }
+
+    useEffect(() => {
+        fetchData()
+    }, [])
+
+    let PAGE_SIZE=13;
+    let totalProducts=products.length;
+    let noOfPages=Math.ceil(totalProducts/PAGE_SIZE);
+    let start=currentPage*PAGE_SIZE;
+    let end=start+PAGE_SIZE
+
+    console.log(products)
+
+    function handlePage(n){
+        setCurrentPage(n);
+    }
+
+    return !products.length ? 
+    (
+        <h1>No Products Found</h1>
+    ) :
+       ( <div>
+            {/* What is Pagination ?
+            Pagination is technique where we divide the data in diffrent pages.
+      */}
+
+            <h1>Pagination</h1>
+                {[...Array(noOfPages).keys()].map((n)=>(
+                    <button onClick={()=>{handlePage(n)}}>{n+1}</button>
+                ))}
+            <div className="container">
+            {products.slice(start,end).map((el) => (
+                <div className="product-container">
+                    <img src={el.thumbnail} alt={el.title} />
+                    <span>{el.title}</span>
+                </div>
+            ))}
+            </div>
+
+
+        </div>
+    )
+}
+
+export default AboutPagination
