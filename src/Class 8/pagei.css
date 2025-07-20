@@ -19,3 +19,14 @@
     padding:10px ;
     margin: 5px;
 }
+
+.active{
+    background-color: blue;
+    color: white;
+}
+
+.left-right{
+    font-size: 1.2rem;
+    position: relative;
+    top:5px;
+}

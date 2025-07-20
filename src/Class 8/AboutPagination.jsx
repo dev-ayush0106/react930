@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ProductComponent from './ProductComponent';
 import "./pagei.css"
+import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
 
 const AboutPagination = () => {
     let [products, setProducts] = useState([]);
@@ -28,6 +29,24 @@ const AboutPagination = () => {
         setCurrentPage(n);
     }
 
+    function prevPage(){
+        if(currentPage>0){
+            setCurrentPage(currentPage-1)
+        }
+    }
+    function nextPage(){
+        if(currentPage<noOfPages-1){
+            setCurrentPage(currentPage+1);
+        }
+    }
+
+    // function prevPage(){
+    //     setCurrentPage((prev)=>prev-1);
+    // }
+    // function nextPage(){
+    //     setCurrentPage((prev)=>prev+1);
+    // }
+
     return !products.length ? 
     (
         <h1>No Products Found</h1>
@@ -38,9 +57,11 @@ const AboutPagination = () => {
       */}
 
             <h1>Pagination</h1>
+                <FaAngleLeft onClick={()=>{prevPage()}} className='left-right'/>
                 {[...Array(noOfPages).keys()].map((n)=>(
-                    <button onClick={()=>{handlePage(n)}}>{n+1}</button>
+                    <button className={(currentPage===n ? "active":"")} onClick={()=>{handlePage(n)}}>{n+1}</button>
                 ))}
+                <FaAngleRight onClick={()=>{nextPage()}} className='left-right'/>
             <div className="container">
             {products.slice(start,end).map((el) => (
                 <div className="product-container">
