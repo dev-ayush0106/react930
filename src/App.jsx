@@ -28,6 +28,7 @@ import Todo from "./Class 6/Todo";
 import './App.css'
 import Tracker from "./Class 7/Tracker";
 import AboutPagination from "./Class 8/AboutPagination";
+import Weather from "./Class 9/Weather";
 
 function App() {
   let router = createBrowserRouter([
@@ -129,7 +130,10 @@ function App() {
       {/* <Tracker/> */}
 
       {/* Class 8 */}
-      <AboutPagination/>
+      {/* <AboutPagination/> */}
+
+      {/* Class 9 */}
+      <Weather/>
     </>
   ) 
 }
