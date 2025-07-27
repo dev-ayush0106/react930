@@ -15,7 +15,7 @@ import PageNotFound from "./Class 3/router/PageNotFound";
 import Mern from "./Class 3/router/child/Mern";
 import JavaFS from "./Class 3/router/child/JavaFS";
 import PythonFS from "./Class 3/router/child/PythonFS";
-import Navbar from "./Class 3/router/Navbar";
+// import Navbar from "./Class 3/router/Navbar";
 import Student from "./Class 3/router/Student";
 import Form from "./Class 4/Form/Form";
 import Date from "./Class 3/Calender";
@@ -29,61 +29,80 @@ import './App.css'
 import Tracker from "./Class 7/Tracker";
 import AboutPagination from "./Class 8/AboutPagination";
 import Weather from "./Class 9/Weather";
+import ProductDetails from "./Class 8/ProductDetails";
+import Redux from "./Class 10/Redux";
+import Navbar from "./Class 10/AddTocart/Navbar";
+import Cart from "./Class 10/AddTocart/Cart";
 
 function App() {
-  let router = createBrowserRouter([
+  // let router = createBrowserRouter([
+  //   {
+  //     path: "/",
+  //     element:<> 
+  //     <Navbar/>
+  //     <Home />
+  //     </>
+  //   }, // home
+  //   {
+  //     path: "/about",
+  //     element: <>
+  //     <Navbar/>
+  //     <About />
+  //     </>
+  //   }, // about
+  //   {
+  //     path: "/courses",
+  //     element: <>
+  //     <Navbar/>
+  //     <Course />
+  //     </>,
+  //     children:[
+  //       {
+  //         path:"mern",
+  //         element:<Mern/>
+  //       },
+  //       {
+  //         path:"javafs",
+  //         element:<JavaFS/>
+  //       },
+  //       {
+  //         path:"pythonfs",
+  //         element:<PythonFS/>
+  //       }
+  //     ]
+  //   }, // course
+  //   {
+  //     path: "/contact",
+  //     element: <>
+  //     <Navbar/>
+  //     <Contact />
+  //     </>
+  //   }, // contact
+  //   {
+  //     path: "/student/:id",
+  //     element: <>
+  //     <Navbar/>
+  //     <Student />
+  //     </>
+  //   },
+  //   {
+  //     path: "*",
+  //     element:<PageNotFound/>
+  //   }
+  // ])
+
+  let router=createBrowserRouter([
     {
-      path: "/",
-      element:<> 
-      <Navbar/>
-      <Home />
-      </>
-    }, // home
-    {
-      path: "/about",
-      element: <>
-      <Navbar/>
-      <About />
-      </>
-    }, // about
-    {
-      path: "/courses",
-      element: <>
-      <Navbar/>
-      <Course />
-      </>,
-      children:[
-        {
-          path:"mern",
-          element:<Mern/>
-        },
-        {
-          path:"javafs",
-          element:<JavaFS/>
-        },
-        {
-          path:"pythonfs",
-          element:<PythonFS/>
-        }
-      ]
-    }, // course
-    {
-      path: "/contact",
-      element: <>
-      <Navbar/>
-      <Contact />
-      </>
-    }, // contact
-    {
-      path: "/student/:id",
-      element: <>
-      <Navbar/>
-      <Student />
-      </>
+      path:"/",
+      element:<><Navbar/><AboutPagination/></>
     },
     {
-      path: "*",
-      element:<PageNotFound/>
+      path:"/products/:id",
+      element:<ProductDetails/>
+    },
+    {
+      path:"/products/:id/cart",
+      element:<Cart/>
     }
   ])
   return (
@@ -132,8 +151,15 @@ function App() {
       {/* Class 8 */}
       {/* <AboutPagination/> */}
 
+
+
       {/* Class 9 */}
-      <Weather/>
+      {/* <Weather/> */}
+
+      {/* class 10 */}
+      <RouterProvider router={router}/>
+      {/* <Redux/> */}
+
     </>
   ) 
 }

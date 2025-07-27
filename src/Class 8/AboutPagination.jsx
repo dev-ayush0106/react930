@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ProductComponent from './ProductComponent';
 import "./pagei.css"
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import { useNavigate } from 'react-router';
 
 const AboutPagination = () => {
     let [products, setProducts] = useState([]);
@@ -40,6 +41,9 @@ const AboutPagination = () => {
         }
     }
 
+    let navigate=useNavigate();
+
+
     // function prevPage(){
     //     setCurrentPage((prev)=>prev-1);
     // }
@@ -64,7 +68,7 @@ const AboutPagination = () => {
                 <FaAngleRight onClick={()=>{nextPage()}} className='left-right'/>
             <div className="container">
             {products.slice(start,end).map((el) => (
-                <div className="product-container">
+                <div onClick={()=>{navigate(`/products/${el.id}`)}} className="product-container">
                     <img src={el.thumbnail} alt={el.title} />
                     <span>{el.title}</span>
                 </div>
